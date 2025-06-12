@@ -1,19 +1,20 @@
 # k8s-gitops-test-demo
 k8s-gitops-test-demo
-📁 helm/
+```
+ helm/
    └── api-tests/
        ├── templates/
        │   └── deployment.yaml         # Test runner pod definition
        └── values.yaml                # Runtime config for Rest Assured/JMeter tests
-📁 .github/workflows/
+ .github/workflows/
    └── test-on-pr.yaml               # GitHub Actions workflow (PR → Helm → GitOps)
-📁 manifests/
+ manifests/
    └── namespace.yaml                # Dynamic namespace creation per PR
-📁 scripts/
+ scripts/
    └── generate-test-manifests.sh    # Automates manifest commits to GitOps repo
-📄 README.md                          # Usage instructions
+ README.md                          # Usage instructions
 
-
+```
 
 Tools Integrated:
 
@@ -27,17 +28,9 @@ Tools Integrated:
 
     Rest Assured or JMeter as test containers
 
+FLOW >
 
-
-Pull Request triggers GitHub Actions
-
-Helm chart pushed to GitOps repo
-
-ArgoCD applies it to Kubernetes
-
-Test pod runs → logs results
-
-Metrics go to dashboard (optional)
+Pull Request triggers GitHub Actions  >  Helm chart pushed to GitOps repo > ArgoCD applies it to Kubernetes > Test pod runs → logs results > Metrics go to dashboard (optional)
 
 
 
