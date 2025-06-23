@@ -1,0 +1,3 @@
+[submodule "mlops-pipeline"]
+	path = mlops-pipeline
+	url = https://github.com/pritigrais/mlops-pipeline.git
